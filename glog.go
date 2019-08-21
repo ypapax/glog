@@ -1178,3 +1178,11 @@ func Exitf(format string, args ...interface{}) {
 	atomic.StoreUint32(&fatalNoStacks, 1)
 	logging.printf(fatalLog, format, args...)
 }
+
+func SetVerbosity(level Level) {
+	logging.verbosity = level
+}
+
+func SetLogToStdErr(value bool) {
+	logging.toStderr = value
+}
